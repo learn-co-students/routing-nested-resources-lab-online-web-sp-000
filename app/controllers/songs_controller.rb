@@ -68,8 +68,3 @@ class SongsController < ApplicationController
     params.require(:song).permit(:title, :artist_name)
   end
 end
-
-#show action, if the song can't be found for a given artist, redirect to the index of the artist's songs and set a flash[:alert] of "Song not found."
-
-
-# => {"controller"=>"songs", "action"=>"show", "artist_id"=>"1", "id"=>"8"}
