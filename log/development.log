@@ -1539,3 +1539,33 @@ Processing by ArtistsController#index as HTML
   [1m[35mArtist Load (0.4ms)[0m  SELECT "artists".* FROM "artists"
   Rendered artists/index.html.erb within layouts/application (3.2ms)
 Completed 200 OK in 21ms (Views: 20.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/artists/111/songs" for ::1 at 2019-01-04 10:44:31 -0500
+Processing by SongsController#index as HTML
+  Parameters: {"artist_id"=>"111"}
+  [1m[36mArtist Load (0.3ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 111]]
+Redirected to http://localhost:3000/artists
+Completed 302 Found in 6ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/artists" for ::1 at 2019-01-04 10:44:31 -0500
+Processing by ArtistsController#index as HTML
+  [1m[35mArtist Load (0.2ms)[0m  SELECT "artists".* FROM "artists"
+  Rendered artists/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 29ms (Views: 28.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/artists/111/songs" for ::1 at 2019-01-04 10:45:51 -0500
+Processing by SongsController#index as HTML
+  Parameters: {"artist_id"=>"111"}
+  [1m[36mArtist Load (0.4ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 111]]
+Redirected to http://localhost:3000/artists
+Completed 302 Found in 6ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/artists" for ::1 at 2019-01-04 10:45:52 -0500
+Processing by ArtistsController#index as HTML
+  [1m[35mArtist Load (0.2ms)[0m  SELECT "artists".* FROM "artists"
+  Rendered artists/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.4ms)
