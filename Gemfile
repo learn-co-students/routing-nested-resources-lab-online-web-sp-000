@@ -8,7 +8,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
-  gem 'pry'
   gem 'capybara'
   gem 'rspec-rails'
   gem 'shoulda'
@@ -18,3 +17,8 @@ group :development do
   gem 'web-console', '~> 2.0'
 end
 
+
+
+gem "pry", "~> 0.10.3", :groups => [:development, :test]
+
+gem "pry-rails", "~> 0.3.5", :groups => [:development, :test]
