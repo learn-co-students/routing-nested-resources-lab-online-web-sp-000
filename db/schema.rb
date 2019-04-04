@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2016_01_26_235547) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "artist_id"
-    t.index ["artist_id"], name: "index_songs_on_artist_id"
   end
-
+  
+  add_index "songs", ["artist_id"], name: "index_songs_on_artist_id"
 end
