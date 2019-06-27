@@ -188,7 +188,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
-  capybara
+  capybara (~> 3.13.2)
   jbuilder (~> 2.0)
   pry
   rails (= 5.0.7.1)
