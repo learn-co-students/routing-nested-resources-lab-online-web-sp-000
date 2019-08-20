@@ -10,10 +10,4 @@ class Song < ActiveRecord::Base
     self.artist = artist
   end
 
-
-  def self.without_a_captain
-   where(artist_id: nil)
-  end
-
-
 end

@@ -1,21 +1,23 @@
 class SongsController < ApplicationController
-
   def index
-    if !Song.without_a_captain
-#      binding.pry
-      @songs = Artist.find_by(params[:artist_id]).songs
-#      redirect_to artists_path
-    else
-      @songs = Song.all
-#      redirect_to songs_path
-    end
+    @songs = Song.all
   end
-
 
   def show
-
     @song = Song.find(params[:id])
   end
+
+
+
+
+
+
+
+
+
+
+
+
 
   def new
     @song = Song.new
