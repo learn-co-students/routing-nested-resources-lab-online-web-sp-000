@@ -4,7 +4,12 @@ class ArtistsController < ApplicationController
   end
 
   def show
-    @artist = Artist.find(params[:id])
+    if Artist.exists?(params[:id])
+      @artist = Artist.find(params[:id])
+    else
+      flash[:notice] = "Artist not found"
+      redirect_to artists_path
+    end
   end
 
   def new
