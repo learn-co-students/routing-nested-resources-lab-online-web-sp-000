@@ -2,4 +2,4 @@ require 'rails_helper'
 
 RSpec.describe ArtistsController do
 
-en
+end
