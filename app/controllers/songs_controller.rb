@@ -1,22 +1,26 @@
-require 'pry'
 class SongsController < ApplicationController
+
   def index
-    if params[:artist_id].is_a?(Integer)
-      @songs = Artist.find(params[:artist_id]).songs
-    elsif params[:artist_id] && !params[:artist_id].is_a?(Integer)
-      flash[:alert] = "Artist not found."
-       @songs = Song.all
-       redirect_to artists_path 
+    if params[:artist_id] 
+      if Artist.find_by(id: params[:artist_id]) 
+        @songs = Artist.find_by(id: params[:artist_id]).songs 
+      else 
+        flash[:alert] = "Artist not found."
+        @songs = Song.all
+        redirect_to artists_path 
+      end 
     else
        @songs = Song.all 
     end 
   end
 
   def show
-      @song = Song.find(params[:id]) 
-    if @song == nil     
-        flash[:alert] = "Song not found."
-        @artist = Artist.find(params[:artist_id])
+      @song = Song.find_by(id: params[:id])
+    if @song 
+      @song = Song.find_by(id: params[:id])
+    elsif !@song    
+        flash[:alert] = "Song not found." 
+        @artist = Artist.find_by(id: params[:artist_id])
         redirect_to artist_songs_path(@artist)
     end 
   end
