@@ -1,4 +1,17 @@
 class ArtistsController < ApplicationController
+
+  def songs_index
+    @artist = Artist.find(params[:id])
+    @songs = @artist.songs
+    render template 'songs/index'
+  end
+
+  def songs
+    @artist = Artist.find(params[:id])
+    @song = Song.find(params[:song_id])
+    render template 'songs/show'
+  end
+
   def index
     @artists = Artist.all
   end
@@ -49,4 +62,5 @@ class ArtistsController < ApplicationController
   def artist_params
     params.require(:artist).permit(:name)
   end
+
 end

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="Rails routing-nested-resources-lab-online-web-sp-000: development" uuid="31325087-6a96-4ad2-b51e-4c189c8a0af6">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/development.sqlite3</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails routing-nested-resources-lab-online-web-sp-000: test" uuid="3d8899b5-a3cf-4ce7-9dc6-bd4683eca79a">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/test.sqlite3</jdbc-url>
+    </data-source>
+  </component>
+</project>
