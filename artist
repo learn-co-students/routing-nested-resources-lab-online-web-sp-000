@@ -1,0 +1,14 @@
+
+[1mFrom:[0m /home/rehmanali/code/labs/routing-nested-resources-lab-online-web-sp-000/app/controllers/songs_controller.rb @ line 4 SongsController#index:
+
+     [1;34m2[0m: [32mdef[0m [1;34mindex[0m
+     [1;34m3[0m:   artist = [1;34;4mArtist[0m.find_by(params[[33m:id[0m])
+ =>  [1;34m4[0m:   binding.pry
+     [1;34m5[0m:     [32mif[0m artist.nil?
+     [1;34m6[0m:       flash[[33m:notice[0m] = [31m[1;31m"[0m[31mArtist not found[1;31m"[0m[31m[0m
+     [1;34m7[0m:       redirect_to artists_path
+     [1;34m8[0m:     [32melse[0m
+     [1;34m9[0m:       @songs = [1;34;4mSong[0m.all
+    [1;34m10[0m:     [32mend[0m
+    [1;34m11[0m: [32mend[0m 
+
