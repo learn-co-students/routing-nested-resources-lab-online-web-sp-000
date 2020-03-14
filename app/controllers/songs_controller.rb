@@ -1,10 +1,48 @@
 class SongsController < ApplicationController
   def index
-    @songs = Song.all
+    #In the songs#index action, if the artist can't be found, redirect to the index of artists, 
+    #and set a flash[:alert] of "Artist not found."
+    if params[:artist_id]
+      #to handle not being able to find a record not with find like
+      #@songs = Artist.find(params[:artist_id]).songs but
+      @artist.find_by(id: params[:artist_id])
+        if @artist.nil?
+          redirect_to artists_path, alert: "Artist not found"
+        else
+          @songs = @artist.songs
+        end
+    else
+      @songs = Song.all
+    end
+  end
+
+  def index
+    if params[:artist_id]
+      @artist = Artist.find_by(id: params[:artist_id])
+      if @artist.nil?
+        redirect_to artists_path, alert: "Artist not found"
+      else
+        @songs = @artist.songs
+      end
+    else
+      @songs = Song.all
+    end
   end
 
   def show
-    @song = Song.find(params[:id])
+    #In the songs#show action, if the song can't be found for a given artist,
+    # redirect to the index of the artist's songs and set a flash[:alert] of "Song not found."
+    if params[:artist_id]
+      @artist = Artist.find_by(id: params[:artist_id])
+      @song = @artist.songs.find_by(id: params[:id])# when filtering nested resources to query for the children through the parent, e.g., @artist.songs.find_by(id: ...)
+      if @song.nil?
+        redirect_to artist_songs_path(@artist), alert: "Song not found" #it is also possible to assign a flash message as part of the redirection. You can assign :notice, :alert or the general purpose :flash
+
+
+      end
+    else
+      @song = Song.find(params[:id])
+    end
   end
 
   def new
