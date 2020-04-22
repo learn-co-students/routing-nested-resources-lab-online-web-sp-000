@@ -11,6 +11,12 @@ class ArtistsController < ApplicationController
     @artist = Artist.new
   end
 
+  def songs_index
+    raise params.inspect
+    @artist = Artist.find(params[:artist_id])
+    @songs = @artist.songs
+  end
+
   def create
     @artist = Artist.new(artist_params)
 
