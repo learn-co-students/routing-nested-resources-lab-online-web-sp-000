@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
-  resources :artists
+  get 'artists/:id/songs', to: 'artists#index'
+  get 'artists/:id/songs/:song_id', to: 'artists#show'
+
+  resources :artists, only: [:index, :show]
   resources :songs
 end
