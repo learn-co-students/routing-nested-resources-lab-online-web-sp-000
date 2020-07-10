@@ -1,4 +1,7 @@
 class SongsController < ApplicationController
+
+  helper ArtistsHelper
+
   def index
 
     if params[:artist_id]
