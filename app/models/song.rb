@@ -1,5 +1,6 @@
 class Song < ActiveRecord::Base
   belongs_to :artist
+  #validates :artist_id, numericality: {only_integer: true}
 
   def artist_name
     self.try(:artist).try(:name)
