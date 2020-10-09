@@ -4,3 +4,5 @@
     <li><%= link_to song.title, artist_song_path(@artist.id,song.id) %></li>
   <% end %>
 </ul>
+
+<%=link_to "Create a Song", new_artist_song_path(@artist)%>
