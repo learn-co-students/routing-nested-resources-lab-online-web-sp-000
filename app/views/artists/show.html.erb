@@ -1,6 +1,14 @@
 <h1><%= @artist.name %></h1>
+<div>
+  <% if flash.present? %>
+  <%flash.each do|name, msg| -%>
+  <%= content_tag :div, msg, class: name %>
+  <%end -%>
+  <%end -%>
+</div>
+
 <ul>
   <% @artist.songs.each do |song| %>
-    <li><%= song.title %></li>
+    <li><%= link_to song.title, artist_song_path(@artist, song) %></li>
   <% end %>
 </ul>
