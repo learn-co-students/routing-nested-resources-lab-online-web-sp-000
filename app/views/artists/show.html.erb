@@ -1,7 +1,3 @@
-<% if flash[:alert] %>
-<p><%= flash[:alert] %></p>
-<% end %>
-
 <h1><%= @artist.name %></h1>
 <ul>
   <% @artist.songs.each do |song| %>
