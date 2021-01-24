@@ -1,7 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe ArtistsHelper, type: :helper do
-
   before do
     Artist.destroy_all
     Song.destroy_all
