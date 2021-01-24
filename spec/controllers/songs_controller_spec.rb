@@ -1,7 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe SongsController do
-
   before do
     Song.destroy_all
     Artist.destroy_all
@@ -10,21 +9,18 @@ RSpec.describe SongsController do
   end
 
   describe "GET index" do
-
     it "redirects when artist not found" do
       get :index, params: { artist_id: "abc" }
       expect(response).to redirect_to artists_path
     end
 
-    it 'returns 200 when just index with no artist_id' do
+    it "returns 200 when just index with no artist_id" do
       get :index
       expect(response).to be_ok
     end
-
   end
 
   describe "GET show with  artist" do
-
     it "returns 200 with valid song and no artist" do
       get :show, params: { id: @song.id }
       expect(response).to be_ok
@@ -41,5 +37,4 @@ RSpec.describe SongsController do
       expect(response).to be_ok
     end
   end
-
 end
