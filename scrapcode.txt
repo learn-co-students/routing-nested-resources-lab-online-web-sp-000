@@ -1,0 +1,10 @@
+##IN CONTROLLER
+flash[:nedry] = "Ah-ah-ah! You didn't say the magic word!"
+
+##IN VIEWS
+<% if flash.has?(:input_error) %>
+  <h2 class="error"><%= flash[:input_error] %></h2>
+  <br>
+<% end %>
+
+(Yes it's not the same flash message so what.)
