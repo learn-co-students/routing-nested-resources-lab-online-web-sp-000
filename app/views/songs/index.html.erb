@@ -1,7 +1,16 @@
+<% if flash[:alert] %>
+<div class="alert"><%= flash[:alert] %></div>
+<% end %>
 <ul>
 <% @songs.each do |song| %>
-  <li><%= display_artist(song) %> - <%= link_to song.title, song_path(song) %></li>
+  <li><%= link_to display_artist(song), artist_songs_path(song.artist) %> - <%= link_to song.title, song_path(song) %></li>
 <% end %>
 </ul>
 <br>
 <%= link_to "Add New Song", new_song_path %>
+    
+    <%# it "has a link to edit the song if no artist" do
+      song = Song.create(title: "Mambo No. 5")
+      visit songs_path
+      expect(page).to have_link("Add Artist", href: edit_song_path(song))
+    end %>
