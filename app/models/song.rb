@@ -1,6 +1,10 @@
 class Song < ActiveRecord::Base
   belongs_to :artist
 
+  def self.song_exist?(song_id)
+    find_by(id: song_id).present?
+  end
+
   def artist_name
     self.try(:artist).try(:name)
   end
